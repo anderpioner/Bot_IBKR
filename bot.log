@@ -62,3 +62,46 @@
 2026-02-07 16:30:40,150 - IBKRBot - INFO - Initializing strategy for FUN...
 2026-02-07 16:30:40,743 - ib_insync.wrapper - ERROR - Error 10089, reqId 12: Requested market data requires additional subscription for API. See link in 'Market Data Connections' dialog for more details.Delayed market data is available.MMM NYSE/TOP/ALL, contract: Stock(conId=9720, symbol='MMM', exchange='SMART', primaryExchange='NYSE', currency='USD', localSymbol='MMM', tradingClass='MMM')
 2026-02-07 16:30:41,168 - IBKRBot - INFO - Initializing strategy for MMM...
+2026-02-07 16:40:34,152 - ib_insync.wrapper - INFO - Warning 2105, reqId -1: HMDS data farm connection is broken:euhmds
+2026-02-07 16:40:35,417 - ib_insync.wrapper - INFO - Warning 2105, reqId -1: HMDS data farm connection is broken:euhmds
+2026-02-07 16:40:38,304 - ib_insync.wrapper - INFO - Warning 2105, reqId -1: HMDS data farm connection is broken:euhmds
+2026-02-07 16:40:54,105 - ib_insync.wrapper - INFO - Warning 2106, reqId -1: HMDS data farm connection is OK:euhmds
+2026-02-07 16:41:25,991 - ib_insync.wrapper - INFO - Warning 2105, reqId -1: HMDS data farm connection is broken:euhmds
+2026-02-07 16:41:25,991 - ib_insync.wrapper - INFO - Warning 2106, reqId -1: HMDS data farm connection is OK:euhmds
+2026-02-07 16:43:23,126 - IBKRBot - INFO - Config change detected. Reloading symbols...
+2026-02-07 16:43:23,145 - IBKRBot - INFO - Adding new asset to monitor: NVDA
+2026-02-07 16:43:24,388 - IBKRBot - INFO - Removing asset: MMM
+2026-02-07 18:46:04,046 - ib_insync.wrapper - INFO - Warning 2105, reqId -1: HMDS data farm connection is broken:euhmds
+2026-02-07 18:46:04,624 - ib_insync.wrapper - INFO - Warning 2105, reqId -1: HMDS data farm connection is broken:euhmds
+2026-02-07 18:46:07,288 - ib_insync.wrapper - INFO - Warning 2105, reqId -1: HMDS data farm connection is broken:euhmds
+2026-02-07 18:46:22,405 - ib_insync.wrapper - INFO - Warning 2105, reqId -1: HMDS data farm connection is broken:euhmds
+2026-02-07 18:46:40,586 - ib_insync.wrapper - INFO - Warning 2106, reqId -1: HMDS data farm connection is OK:euhmds
+2026-02-07 18:47:12,751 - ib_insync.wrapper - INFO - Warning 2105, reqId -1: HMDS data farm connection is broken:euhmds
+2026-02-07 18:47:12,752 - ib_insync.wrapper - INFO - Warning 2106, reqId -1: HMDS data farm connection is OK:euhmds
+2026-02-07 19:08:51,675 - ib_insync.wrapper - INFO - Warning 2103, reqId -1: Market data farm connection is broken:cashfarm
+2026-02-07 19:08:52,756 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:cashfarm
+2026-02-07 19:38:56,758 - ib_insync.wrapper - INFO - Warning 2103, reqId -1: Market data farm connection is broken:usfuture
+2026-02-07 19:38:57,866 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usfuture
+2026-02-07 20:45:46,460 - bot.connection - INFO - Connecting to IBKR at 127.0.0.1:7497 (Client ID: 1)...
+2026-02-07 20:45:46,460 - ib_insync.client - INFO - Connecting to 127.0.0.1:7497 with clientId 1...
+2026-02-07 20:45:46,462 - ib_insync.client - INFO - Connected
+2026-02-07 20:45:46,465 - ib_insync.client - INFO - Logged on to server version 176
+2026-02-07 20:45:46,466 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usfarm.nj
+2026-02-07 20:45:46,466 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usfuture
+2026-02-07 20:45:46,466 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:eufarm
+2026-02-07 20:45:46,466 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:cashfarm
+2026-02-07 20:45:46,466 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usopt.nj
+2026-02-07 20:45:46,467 - ib_insync.client - INFO - API connection ready
+2026-02-07 20:45:46,467 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usfarm
+2026-02-07 20:45:46,467 - ib_insync.wrapper - INFO - Warning 2106, reqId -1: HMDS data farm connection is OK:euhmds
+2026-02-07 20:45:46,468 - ib_insync.wrapper - INFO - Warning 2106, reqId -1: HMDS data farm connection is OK:ushmds
+2026-02-07 20:45:46,468 - ib_insync.wrapper - INFO - Warning 2158, reqId -1: Sec-def data farm connection is OK:secdefil
+2026-02-07 20:45:46,670 - ib_insync.ib - INFO - Synchronization complete
+2026-02-07 20:45:46,671 - bot.connection - INFO - Successfully connected to IBKR.
+2026-02-07 20:45:47,665 - IBKRBot - INFO - Bot started. Monitoring assets...
+2026-02-07 20:45:48,174 - ib_insync.wrapper - ERROR - Error 10089, reqId 4: Requested market data requires additional subscription for API. See link in 'Market Data Connections' dialog for more details.Delayed market data is available.SND NASDAQ.NMS/TOP/ALL, contract: Stock(conId=254358203, symbol='SND', exchange='SMART', primaryExchange='NASDAQ', currency='USD', localSymbol='SND', tradingClass='NMS')
+2026-02-07 20:45:48,365 - IBKRBot - INFO - Initializing strategy for SND...
+2026-02-07 20:45:48,815 - ib_insync.wrapper - ERROR - Error 10089, reqId 8: Requested market data requires additional subscription for API. See link in 'Market Data Connections' dialog for more details.FUN NYSE/TOP/ALL, contract: Stock(conId=712108704, symbol='FUN', exchange='SMART', primaryExchange='NYSE', currency='USD', localSymbol='FUN', tradingClass='FUN')
+2026-02-07 20:45:49,520 - IBKRBot - INFO - Initializing strategy for FUN...
+2026-02-07 20:45:50,178 - ib_insync.wrapper - ERROR - Error 10089, reqId 12: Requested market data requires additional subscription for API. See link in 'Market Data Connections' dialog for more details.Delayed market data is available.NVDA NASDAQ.NMS/TOP/ALL, contract: Stock(conId=4815747, symbol='NVDA', exchange='SMART', primaryExchange='NASDAQ', currency='USD', localSymbol='NVDA', tradingClass='NMS')
+2026-02-07 20:45:50,527 - IBKRBot - INFO - Initializing strategy for NVDA...

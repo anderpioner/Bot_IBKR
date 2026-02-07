@@ -194,11 +194,28 @@ def load_bot_state():
         return {}
 
 def find_bot_process():
-    """Finds the bot process (main.py)"""
+    """Finds the bot process (main.py) using PID from state or fallback search"""
+    state_data = load_bot_state()
+    pid = state_data.get("_bot_info", {}).get("pid")
+    
+    # 1. Try direct PID check (Fastest)
+    if pid:
+        try:
+            proc = psutil.Process(pid)
+            cmdline = proc.cmdline()
+            # Verify it's actually our bot and not a recycled PID
+            if cmdline and any('main.py' in arg for arg in cmdline):
+                return proc
+        except (psutil.NoSuchProcess, psutil.AccessDenied):
+            pass
+
+    # 2. Fallback: Search all processes (Slow but robust)
     for proc in psutil.process_iter(['pid', 'name', 'cmdline']):
         try:
             cmdline = proc.info.get('cmdline')
             if cmdline and any('main.py' in arg for arg in cmdline):
+                # Don't return the dashboard itself if it mentions main.py in logs/cmd
+                if 'dashboard.py' in ' '.join(cmdline): continue
                 return proc
         except (psutil.NoSuchProcess, psutil.AccessDenied):
             continue
@@ -243,20 +260,35 @@ def render_sidebar():
     last_update_str = bot_info.get("last_update")
     is_connected = bot_info.get("is_connected", False)
     server_time_str = bot_info.get("server_time")
-    
-    status_label = "🔴 Offline"
+    # Time and Market Logic
     ny_tz = pytz.timezone('America/New_York')
     ny_time = datetime.now(ny_tz)
     
+    # Combined Status Section
+    st.sidebar.subheader("🤖 Status & Ambiente")
+    
+    # Process check
+    bot_proc = find_bot_process()
+    
+    # Check if heartbeat is fresh
+    is_heartbeat_alive = False
     if last_update_str:
         last_update = datetime.fromisoformat(last_update_str)
-        if datetime.now() - last_update < timedelta(seconds=15):
-            status_label = "🟢 Online" if is_connected else "🟡 Standby (No API)"
+        if datetime.now() - last_update < timedelta(seconds=20): # Slightly larger buffer
+            is_heartbeat_alive = True
             if server_time_str and is_connected:
-                # Convert the UTC server time to NY time
+                # Use server time if available and bot is connected
                 st_dt = datetime.fromisoformat(server_time_str)
                 ny_time = st_dt.astimezone(ny_tz)
-            
+
+    # Final Status Logic: must have process AND heartbeat
+    if bot_proc and is_heartbeat_alive:
+        status_label = "🟢 Online" if is_connected else "🟡 Standby (No API)"
+    elif bot_proc and not is_heartbeat_alive:
+        status_label = "🟡 Initing (Slow Loop)"
+    else:
+        status_label = "🔴 Offline"
+
     # Market Status Indicator
     is_open = False
     if ny_time.weekday() < 5: # Mon-Fri
@@ -265,10 +297,7 @@ def render_sidebar():
         if market_open <= ny_time <= market_close:
             is_open = True
     market_status = "🟢" if is_open else "🔴"
-    
-    # Combined Status Section
-    st.sidebar.subheader("🤖 Status & Ambiente")
-    
+
     col_status1, col_status2 = st.sidebar.columns(2)
     col_status1.markdown(f"**IBKR:** {status_label}")
     col_status2.markdown(f"**Mkt:** {market_status}")

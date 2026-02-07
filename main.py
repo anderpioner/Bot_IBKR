@@ -48,7 +48,7 @@ class ORBBot:
         
         self.is_running = False
 
-    def save_state(self):
+    async def save_state(self):
         try:
             state_data = {}
             for symbol, state in self.states.items():
@@ -63,13 +63,24 @@ class ORBBot:
             server_time = None
             is_connected = self.ib.isConnected() if self.ib else False
             if is_connected:
-                # get server time
-                server_time = self.ib.reqCurrentTime().isoformat()
+                # get server time with timeout to prevent hanging the main loop
+                try:
+                    # reqCurrentTime is synchronous but we can wait for response
+                    # In ib_insync, reqCurrentTime() is usually fast but can block if socket is down
+                    server_time_dt = await asyncio.wait_for(
+                        asyncio.to_thread(self.ib.reqCurrentTime), 
+                        timeout=1.0
+                    )
+                    server_time = server_time_dt.isoformat()
+                except Exception:
+                    # Fallback if server time request fails or times out
+                    server_time = None
 
             state_data["_bot_info"] = {
                 "last_update": datetime.now().isoformat(),
                 "is_connected": is_connected,
-                "server_time": server_time
+                "server_time": server_time,
+                "pid": os.getpid()
             }
             with open(self.state_file, "w") as f:
                 json.dump(state_data, f, indent=4)
@@ -96,7 +107,7 @@ class ORBBot:
         self.ib = self.conn.ib # Update reference after connection
 
         self.is_running = True
-        self.save_state() # Signal Online status immediately after connection
+        await self.save_state() # Signal Online status immediately after connection
         
         logger.info("Bot started. Monitoring assets...")
         
@@ -137,16 +148,15 @@ class ORBBot:
         try:
             while self.is_running:
                 await self.check_config_update()
-                self.save_state()
+                await self.save_state()
                 await asyncio.sleep(5)
         except Exception as e:
-            logger.error(f"Error in main loop: {e}")
             logger.error(f"Error in main loop: {e}")
         finally:
             self.is_running = False
             if self.conn:
                 self.conn.disconnect()
-            self.save_state() # Save final disconnected state
+            await self.save_state() # Save final disconnected state
 
     def on_ticker_update(self, tickers):
         for ticker in tickers:
@@ -204,7 +214,7 @@ class ORBBot:
                     del self.active_strategies[symbol]
                 del self.states[symbol]
             
-            self.save_state()
+            await self.save_state()
 
     def stop(self):
         self.is_running = False

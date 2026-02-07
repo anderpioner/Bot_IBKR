@@ -9,9 +9,9 @@
         "atr": 0.27385714285714285,
         "last_price": 4.91,
         "logs": [
-            "[16:30:39] ATR(14) calculated: 0.27",
-            "[16:30:39] Started monitoring SND (No execution)",
-            "[16:30:39] Started monitoring SND with Monitor_Only"
+            "[20:45:48] ATR(14) calculated: 0.27",
+            "[20:45:48] Started monitoring SND (No execution)",
+            "[20:45:48] Started monitoring SND with Monitor_Only"
         ],
         "strategy": "MonitorOnly"
     },
@@ -25,9 +25,9 @@
         "atr": 1.1607142857142858,
         "last_price": 18.73,
         "logs": [
-            "[16:30:40] ATR(14) calculated: 1.16",
-            "[16:30:40] Started monitoring FUN (No execution)",
-            "[16:30:40] Started monitoring FUN with Monitor_Only"
+            "[20:45:49] ATR(14) calculated: 1.16",
+            "[20:45:49] Started monitoring FUN (No execution)",
+            "[20:45:49] Started monitoring FUN with Monitor_Only"
         ],
         "strategy": "MonitorOnly"
     },
@@ -36,6 +36,8 @@
         "levels": {
             "high": 177.67,
             "low": 174.6,
+            "open": 176.7,
+            "close": 177.48,
             "candle_time": "2026-02-06T09:30:00-05:00"
         },
         "position": 0,
@@ -45,15 +47,15 @@
         "atr": 6.627857142857143,
         "last_price": 185.41,
         "logs": [
-            "[16:43:24] ATR(14) calculated: 6.63",
-            "[16:43:24] ORB Levels set: High=177.67, Low=174.6",
-            "[16:43:24] Dynamic subscription started for NVDA (ORB_5min)"
+            "[20:45:50] ATR(14) calculated: 6.63",
+            "[20:45:51] ORB Levels set: High=177.67, Low=174.6",
+            "[20:45:51] Started monitoring NVDA with ORB_5min"
         ],
         "strategy": "ORB5Min"
     },
     "_bot_info": {
-        "last_update": "2026-02-07T16:43:24.388218",
+        "last_update": "2026-02-07T20:50:57.165980",
         "is_connected": true,
-        "server_time": "2026-02-07T19:43:37+00:00"
+        "server_time": null
     }
 }
