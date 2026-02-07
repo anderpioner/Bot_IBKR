@@ -1,0 +1,6 @@
+ib_insync
+pandas
+pyyaml
+streamlit
+plotly
+psutil

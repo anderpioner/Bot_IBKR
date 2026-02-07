@@ -1,0 +1,64 @@
+2026-02-07 16:07:31,891 - bot.connection - INFO - Connecting to IBKR at 127.0.0.1:7497 (Client ID: 1)...
+2026-02-07 16:07:31,891 - ib_insync.client - INFO - Connecting to 127.0.0.1:7497 with clientId 1...
+2026-02-07 16:07:31,891 - ib_insync.client - INFO - Connected
+2026-02-07 16:07:31,940 - ib_insync.client - INFO - Logged on to server version 176
+2026-02-07 16:07:31,951 - ib_insync.client - INFO - API connection ready
+2026-02-07 16:07:31,955 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usfarm.nj
+2026-02-07 16:07:31,956 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usfuture
+2026-02-07 16:07:31,956 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:eufarm
+2026-02-07 16:07:31,956 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:cashfarm
+2026-02-07 16:07:31,956 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usopt.nj
+2026-02-07 16:07:31,956 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usfarm
+2026-02-07 16:07:31,956 - ib_insync.wrapper - INFO - Warning 2106, reqId -1: HMDS data farm connection is OK:euhmds
+2026-02-07 16:07:31,957 - ib_insync.wrapper - INFO - Warning 2106, reqId -1: HMDS data farm connection is OK:ushmds
+2026-02-07 16:07:31,957 - ib_insync.wrapper - INFO - Warning 2158, reqId -1: Sec-def data farm connection is OK:secdefil
+2026-02-07 16:07:32,270 - ib_insync.ib - INFO - Synchronization complete
+2026-02-07 16:07:32,270 - bot.connection - INFO - Successfully connected to IBKR.
+2026-02-07 16:07:32,270 - IBKRBot - INFO - Bot started. Monitoring assets...
+2026-02-07 16:07:33,056 - ib_insync.wrapper - ERROR - Error 10089, reqId 4: Requested market data requires additional subscription for API. See link in 'Market Data Connections' dialog for more details.Delayed market data is available.SND NASDAQ.NMS/TOP/ALL, contract: Stock(conId=254358203, symbol='SND', exchange='SMART', primaryExchange='NASDAQ', currency='USD', localSymbol='SND', tradingClass='NMS')
+2026-02-07 16:07:34,794 - ib_insync.wrapper - ERROR - Error 10089, reqId 8: Requested market data requires additional subscription for API. See link in 'Market Data Connections' dialog for more details.Delayed market data is available.FUN NYSE/TOP/ALL, contract: Stock(conId=712108704, symbol='FUN', exchange='SMART', primaryExchange='NYSE', currency='USD', localSymbol='FUN', tradingClass='FUN')
+2026-02-07 16:07:36,294 - ib_insync.wrapper - ERROR - Error 10089, reqId 12: Requested market data requires additional subscription for API. See link in 'Market Data Connections' dialog for more details.Delayed market data is available.MMM NYSE/TOP/ALL, contract: Stock(conId=9720, symbol='MMM', exchange='SMART', primaryExchange='NYSE', currency='USD', localSymbol='MMM', tradingClass='MMM')
+2026-02-07 16:11:02,485 - bot.connection - INFO - Connecting to IBKR at 127.0.0.1:7497 (Client ID: 1)...
+2026-02-07 16:11:02,485 - ib_insync.client - INFO - Connecting to 127.0.0.1:7497 with clientId 1...
+2026-02-07 16:11:02,486 - ib_insync.client - INFO - Connected
+2026-02-07 16:11:02,489 - ib_insync.client - INFO - Logged on to server version 176
+2026-02-07 16:11:02,490 - ib_insync.client - INFO - API connection ready
+2026-02-07 16:11:02,490 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usfarm.nj
+2026-02-07 16:11:02,490 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usfuture
+2026-02-07 16:11:02,490 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:eufarm
+2026-02-07 16:11:02,490 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:cashfarm
+2026-02-07 16:11:02,490 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usopt.nj
+2026-02-07 16:11:02,490 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usfarm
+2026-02-07 16:11:02,491 - ib_insync.wrapper - INFO - Warning 2106, reqId -1: HMDS data farm connection is OK:euhmds
+2026-02-07 16:11:02,491 - ib_insync.wrapper - INFO - Warning 2106, reqId -1: HMDS data farm connection is OK:ushmds
+2026-02-07 16:11:02,491 - ib_insync.wrapper - INFO - Warning 2158, reqId -1: Sec-def data farm connection is OK:secdefil
+2026-02-07 16:11:02,893 - ib_insync.ib - INFO - Synchronization complete
+2026-02-07 16:11:02,893 - bot.connection - INFO - Successfully connected to IBKR.
+2026-02-07 16:11:02,894 - IBKRBot - INFO - Bot started. Monitoring assets...
+2026-02-07 16:11:03,043 - ib_insync.wrapper - ERROR - Error 10168, reqId 4: Requested market data is not subscribed. Delayed market data is not enabled., contract: Stock(conId=254358203, symbol='SND', exchange='SMART', primaryExchange='NASDAQ', currency='USD', localSymbol='SND', tradingClass='NMS')
+2026-02-07 16:11:04,061 - ib_insync.wrapper - ERROR - Error 10168, reqId 8: Requested market data is not subscribed. Delayed market data is not enabled., contract: Stock(conId=712108704, symbol='FUN', exchange='SMART', primaryExchange='NYSE', currency='USD', localSymbol='FUN', tradingClass='FUN')
+2026-02-07 16:11:05,084 - ib_insync.wrapper - ERROR - Error 10168, reqId 12: Requested market data is not subscribed. Delayed market data is not enabled., contract: Stock(conId=9720, symbol='MMM', exchange='SMART', primaryExchange='NYSE', currency='USD', localSymbol='MMM', tradingClass='MMM')
+2026-02-07 16:13:51,408 - IBKRBot - INFO - Config change detected. Reloading symbols...
+2026-02-07 16:30:38,088 - bot.connection - INFO - Connecting to IBKR at 127.0.0.1:7497 (Client ID: 1)...
+2026-02-07 16:30:38,088 - ib_insync.client - INFO - Connecting to 127.0.0.1:7497 with clientId 1...
+2026-02-07 16:30:38,089 - ib_insync.client - INFO - Connected
+2026-02-07 16:30:38,092 - ib_insync.client - INFO - Logged on to server version 176
+2026-02-07 16:30:38,093 - ib_insync.client - INFO - API connection ready
+2026-02-07 16:30:38,093 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usfarm.nj
+2026-02-07 16:30:38,093 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usfuture
+2026-02-07 16:30:38,094 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:eufarm
+2026-02-07 16:30:38,094 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:cashfarm
+2026-02-07 16:30:38,094 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usopt.nj
+2026-02-07 16:30:38,094 - ib_insync.wrapper - INFO - Warning 2104, reqId -1: Market data farm connection is OK:usfarm
+2026-02-07 16:30:38,094 - ib_insync.wrapper - INFO - Warning 2106, reqId -1: HMDS data farm connection is OK:euhmds
+2026-02-07 16:30:38,094 - ib_insync.wrapper - INFO - Warning 2106, reqId -1: HMDS data farm connection is OK:ushmds
+2026-02-07 16:30:38,094 - ib_insync.wrapper - INFO - Warning 2158, reqId -1: Sec-def data farm connection is OK:secdefil
+2026-02-07 16:30:38,397 - ib_insync.ib - INFO - Synchronization complete
+2026-02-07 16:30:38,397 - bot.connection - INFO - Successfully connected to IBKR.
+2026-02-07 16:30:38,399 - IBKRBot - INFO - Bot started. Monitoring assets...
+2026-02-07 16:30:38,739 - ib_insync.wrapper - ERROR - Error 10089, reqId 4: Requested market data requires additional subscription for API. See link in 'Market Data Connections' dialog for more details.Delayed market data is available.SND NASDAQ.NMS/TOP/ALL, contract: Stock(conId=254358203, symbol='SND', exchange='SMART', primaryExchange='NASDAQ', currency='USD', localSymbol='SND', tradingClass='NMS')
+2026-02-07 16:30:39,124 - IBKRBot - INFO - Initializing strategy for SND...
+2026-02-07 16:30:39,741 - ib_insync.wrapper - ERROR - Error 10089, reqId 8: Requested market data requires additional subscription for API. See link in 'Market Data Connections' dialog for more details.Delayed market data is available.FUN NYSE/TOP/ALL, contract: Stock(conId=712108704, symbol='FUN', exchange='SMART', primaryExchange='NYSE', currency='USD', localSymbol='FUN', tradingClass='FUN')
+2026-02-07 16:30:40,150 - IBKRBot - INFO - Initializing strategy for FUN...
+2026-02-07 16:30:40,743 - ib_insync.wrapper - ERROR - Error 10089, reqId 12: Requested market data requires additional subscription for API. See link in 'Market Data Connections' dialog for more details.Delayed market data is available.MMM NYSE/TOP/ALL, contract: Stock(conId=9720, symbol='MMM', exchange='SMART', primaryExchange='NYSE', currency='USD', localSymbol='MMM', tradingClass='MMM')
+2026-02-07 16:30:41,168 - IBKRBot - INFO - Initializing strategy for MMM...

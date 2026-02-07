@@ -1,0 +1,21 @@
+ibkr:
+  account: ''
+  account_type: paper
+  client_id: 1
+  host: 127.0.0.1
+  port: 7497
+trading:
+  account_equity: 100000
+  asset_strategies:
+    FUN: Monitor_Only
+    NVDA: ORB_5min
+    SND: Monitor_Only
+  max_risk_usd: 1000.0
+  max_stop_atr: 0.3
+  risk_per_trade_percent: 1.0
+  strategy: ORB_5min
+  symbols:
+  - SND
+  - FUN
+  - NVDA
+  timeframe: 5 mins
