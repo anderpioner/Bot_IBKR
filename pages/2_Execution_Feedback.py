@@ -138,10 +138,22 @@ else:
             symbol_options = sorted(symbols) if symbols else []
             test_symbol = st.selectbox("Ativo", options=symbol_options, key="manual_test_symbol")
             
-            # Auto-fetch logic on symbol change
-            if "last_test_symbol" not in st.session_state or st.session_state.last_test_symbol != test_symbol:
-                st.session_state.last_test_symbol = test_symbol
-                tf = trading_cfg.get('timeframe', '5 mins')
+            # Strategy Selection
+            test_strategy = st.selectbox(
+                "Estratégia a Simular", 
+                options=["ORB_5min", "VWAP_1min"], 
+                key="manual_test_strategy",
+                help="Define o tempo gráfico para a busca automática do candle."
+            )
+            
+            # Timeframe map
+            tf_map = {"ORB_5min": "5 mins", "VWAP_1min": "1 min"}
+            tf = tf_map.get(test_strategy, "5 mins")
+
+            # Auto-fetch logic on symbol OR strategy change
+            cache_key = f"{test_symbol}_{test_strategy}"
+            if "last_manual_cache_key" not in st.session_state or st.session_state.last_manual_cache_key != cache_key:
+                st.session_state.last_manual_cache_key = cache_key
                 # Use a small spinner for the fetch
                 with st.status(f"Buscando último candle ({tf}) for {test_symbol}...", expanded=False):
                     recovered = fetch_last_candle(test_symbol, bar_size=tf)
@@ -192,7 +204,6 @@ else:
             c4.metric("Close", f"{c_close:.2f}")
             
             if st.button("🔄 Forçar Recarga", help="Recarrega o candle mais recente agora"):
-                tf = trading_cfg.get('timeframe', '5 mins')
                 recovered = fetch_last_candle(test_symbol, bar_size=tf)
                 if recovered:
                     st.session_state[f"h_{test_symbol}"] = recovered['high']
@@ -228,7 +239,7 @@ else:
                 <div style="position: absolute; top: {w_top + 10}px; height: {w_bottom - w_top}px; width: 2px; background: #888;"></div>
                 <div style="position: absolute; top: {b_top + 10}px; height: {max(2, body_height)}px; width: 20px; background: {color}; border: 1px solid #fff3;"></div>
             </div>
-            <div style="text-align: center; width: 100%; font-size: 0.7rem; color: #888; margin-top: 5px;">Esquemático ({trading_cfg.get('timeframe', '5m')})</div>
+            <div style="text-align: center; width: 100%; font-size: 0.7rem; color: #888; margin-top: 5px;">Esquemático ({tf})</div>
             """, unsafe_allow_html=True)
 
         # Interactive Preview & Direction
